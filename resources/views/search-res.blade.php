@@ -40,32 +40,23 @@
                             <thead>
                                 <tr>
                                     <th>Sr No.</th>
-                                    <th>Employee Id</th>
-                                    <th>Month</th>
-                                    <th>Net Salary</th>
-                                    <th>Bank A/C No.</th>
-                                    <th>Employee Name</th>
-                                    <th>IFSC Code</th>
-                                    <th>Mobile</th>
-                                    <th>Email</th>
+                                    <th>name</th>
+                                    <th>epic number</th>
+                                    <th>part_no</th>
+                                    <th>part_serial_no</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- @foreach ($res as $bank_statement)
+                                 @foreach ($result as $res)
 
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $bank_statement->Emp_Code }}</td>
-                                        <td>{{ $monthName. ($monthNames != '' ? ','.$monthNames : '') }}</td>
-
-                                        <td>{{ $net_salary }}</td>
-                                        <td>{{ $bank_statement->bank_account_number }}</td>
-                                        <td>{{ $bank_statement->emp_name }}</td>
-                                        <td>{{ $bank_statement?->employee?->ifsc }}</td>
-                                        <td>{{ $bank_statement->phone_no }}</td>
-                                        <td>{{ $bank_statement?->employee?->email }}</td>
+                                        <td>{{ $res->fname." ".$res->lname }}</td>
+                                        <td>{{ $res->epic_number }}</td>
+                                        <td>{{ $res->part_no }}</td>
+                                        <td>{{ $res->part_serial_no }}</td>
                                     </tr>
-                                @endforeach -->
+                                @endforeach
                         </table>
                     </div>
                 </div>
