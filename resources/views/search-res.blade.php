@@ -14,15 +14,33 @@
                         <div class="mb-3 row">
 
                             <div class="col-md-3">
-                                <label class="col-form-label" for="from_date">From Date<span class="text-danger">*</span></label>
-                                <input class="form-control title" id="from_date" name="from_date" type="date" placeholder="From Date" readonly>
-                                <span class="text-danger invalid from_date_err"></span>
+                                <label class="col-form-label" for="fname">First Name<span class="text-danger"></span></label>
+                                <input class="form-control title" id="fname" name="fname" type="text" placeholder="First Name">
+                                <span class="text-danger invalid fname_err"></span>
                             </div>
 
                             <div class="col-md-3">
-                                <label class="col-form-label" for="to_date">To Date<span class="text-danger">*</span></label>
-                                <input class="form-control title" id="to_date" name="to_date" type="date" placeholder="To Date" readonly>
-                                <span class="text-danger invalid to_date_err"></span>
+                                <label class="col-form-label" for="lname">Last Name<span class="text-danger"></span></label>
+                                <input class="form-control title" id="lname" name="lname" type="text" placeholder="Last Name">
+                                <span class="text-danger invalid lname_err"></span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="col-form-label" for="epic_number">Epic Number<span class="text-danger"></span></label>
+                                <input class="form-control title" id="epic_number" name="epic_number" type="text" placeholder="Epic Number">
+                                <span class="text-danger invalid epic_number_err"></span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="col-form-label" for="part_no">Part Number<span class="text-danger"></span></label>
+                                <input class="form-control title" id="part_no" name="part_no" type="text" placeholder="Part Number">
+                                <span class="text-danger invalid part_no_err"></span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="col-form-label" for="part_serial_no">Part Serial Number<span class="text-danger"></span></label>
+                                <input class="form-control title" id="part_serial_no" name="part_serial_no" type="text" placeholder="Part Serial Number">
+                                <span class="text-danger invalid part_serial_no_err"></span>
                             </div>
 
                         </div>
@@ -40,10 +58,10 @@
                             <thead>
                                 <tr>
                                     <th>Sr No.</th>
-                                    <th>name</th>
-                                    <th>epic number</th>
-                                    <th>part_no</th>
-                                    <th>part_serial_no</th>
+                                    <th>Name</th>
+                                    <th>Epic Number</th>
+                                    <th>Part No</th>
+                                    <th>Part Serial No.</th>
                                 </tr>
                             </thead>
                             <tbody>

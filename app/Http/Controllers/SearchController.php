@@ -18,30 +18,36 @@ class SearchController extends Controller
             $part_no = $request->part_no ?? null;
             $part_serial_no = $request->part_serial_no ?? null;
 
-
             $res = ElectionData::query()
                     ->when($fname, function ($query, $fname) {
-                        return $query->where('fname', $fname);
+                        return $query->where('fname', 'LIKE', '%' . $fname . '%');
                     })
                     ->when($lname, function ($query, $lname) {
-                        return $query->where('lname', $lname);
+                        return $query->where('lname', 'LIKE', '%' . $lname . '%');
                     })
                     ->when($epic_number, function ($query, $epic_number) {
-                        return $query->where('epic_number', $epic_number);
+                        return $query->where('epic_number', 'LIKE', '%' . $epic_number . '%');
                     })
                     ->when($part_no, function ($query, $part_no) {
-                        return $query->where('part_no', $part_no);
+                        return $query->where('part_no', 'LIKE', '%' . $part_no . '%');
                     })
                     ->when($part_serial_no, function ($query, $part_serial_no) {
-                        return $query->where('part_serial_no', $part_serial_no);
+                        return $query->where('part_serial_no', 'LIKE', '%' . $part_serial_no . '%');
                     })
                     ->get();
 
 
+            if(empty($res))
+            {
+                $res = [];
+            }
+
             return view('search-res')->with(['result' => $res]);
         } catch (\Exception $e) {
             return response()->json([
-                'error2' => 'An error occurred while processing the request.'
+                'error2' => 'An error occurred while processing the request.',
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
             ], 500);
         }
     }
